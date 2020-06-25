@@ -1,0 +1,74 @@
+
+
+GET ALL
+
+uri : /all_films ou /
+route : appel au component moviesComponent
+appel à la méthode movieService.get_all_movies :
+  requête envoyée à la bdd : get SELECT * FROM movies
+stockage de la réponse dans movie.model : 
+  un tableau d'objets
+import du service dans moviesComponent et souscription à la méthode get_all_movies de l'API : 
+  assignation à la variable movies[]
+  passage au navigateur via movies.component.html
+
+
+GET ONE
+
+uri : /one_film/:id
+route : appel au component oneMovieComponent
+appel à la méthode movieService.get_one_movie avec l'id en paramètre :
+  requête : get SELECT * FROM movies WHERE id=id passée en paramètre de l'uri
+stockage de la réponse dans movie.model :
+  un objet 
+import du service dans oneMovieComponent et souscription à la méthode get_one_movie(id) de l'API :
+  assignation à la variable curMovie
+  passage au navigateur via one-movie.component.html 
+
+
+CREATE
+
+uri : /create_movie méthode : get 
+route : appel au component createMovieComponent avec un flag isSubmit = false :
+  affiche le formulaire vide
+méthode : post, flag isSubmit = true :
+  stocke le contenu des inputs dans un tableau d'objets (data) 
+appel à la méthode movieService.create_movie :
+  requete : post INSERT movies VALUES(data)
+Réponse : 
+  statut(200) comme flag pour afficher un résultat à l'utilisateur 
+  avec bouton / lien pour retourner à tous les films
+
+
+UPDATE
+
+uri : update_movie/:id
+route : appel au component updateMovieComponent
+appel à la méthode movieService.update_movie avec l'id en paramètre :
+  requête : put UPDATE SET movies WHERE id = id passée en paramètre de l'uri
+Réponse :
+  statut(201) comme flag pour afficher un résultat à l'utilisateur
+  avec un bouton / lien pour rentourner à tous les films
+
+
+DELETE
+
+uri : delete_film/:id
+route : appel au component delteFilmComponent
+appel à la méthode movieService.delete_movie avec l'id passée en paramètre de l'uri 
+  requête : delete DELTE * FROM movies WHERE id = id passée en paramètre de l'uri 
+Réponse :
+  status(200) comme flag pour afficher un résultat avec retour à tous les films 
+
+
+
+Les méthodes du service appellent les méthodes du controller de l'API
+
+
+
+
+
+
+
+
+

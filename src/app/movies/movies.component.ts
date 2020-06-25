@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from './movie.service';
-import {ActivatedRoute, Router} from '@angular/router';
 import {Movie} from './movie.model';
 
 @Component({
@@ -14,9 +13,7 @@ export class MoviesComponent implements OnInit {
   movies: Movie[];
 
   constructor(
-    private movieService: MovieService,
-    private router: Router,
-    private route: ActivatedRoute
+    private movieService: MovieService
   ) { }
 
   ngOnInit(): void {

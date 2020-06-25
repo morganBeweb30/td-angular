@@ -41,6 +41,11 @@ Into the 'app.module.ts' file, import the HttpClientModule :
 and add it to the NgModule imports :
 `@NgModule({ /**/ imports : [ HttpClienModule ] })`
 
+and the 'formsModule' from '@angular/forms' :
+`import {FormsModule} from '@angular/forms`;
+and add it to the NgModule imports :
+`@NgModule({ /**/ imports : [ FormsModule ] })`
+
 
 
 
