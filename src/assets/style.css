@@ -1,0 +1,11 @@
+
+ul, li {
+    list-style-type: none;
+}
+.card {
+    text-align: justify;
+}
+.card img {
+    height: 15rem;
+    margin: .5rem auto;
+}
