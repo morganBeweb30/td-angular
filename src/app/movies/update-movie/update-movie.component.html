@@ -1,5 +1,5 @@
 
-<p>create-movie works!</p>
+<p>update-movie works!</p>
 
 <h2>{{pageTitle}}</h2>
 
@@ -21,30 +21,17 @@
         <input type="text" class="form-control" id="cover" required name="cover" [(ngModel)]="movie.cover">
       </div>
       
-      <button (click)="saveMovie()" class="btn btn-warning">Enregistrer</button>
+      <button (click)="updateMovie()" class="btn btn-warning">Enregistrer</button>
     </div>
     
     <div *ngIf="isSubmit">
       
-    <h4>Le film a été ajouté</h4>
-    <a href="/" class="btn btn-warning">Retour aux films</a>
+      <h4>Le film a été modifié</h4>
+      <a class="btn btn-warning" routerLink="/all_movies">Retour aux films</a>
 
-
-      <button class="btn btn-success" (click)="newMovie()">Ajouter un autre film</button>
     </div>
     
   </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

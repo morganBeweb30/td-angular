@@ -7,7 +7,11 @@
   <div class="card col-6" *ngFor = "let movie of movies">
     <h3>{{movie.title}}</h3>
     <div class="row">
-      <img class="col-4" src="{{movie.cover}}" alt="">
+      <div class="col-4">
+        <img src="{{movie.cover}}" alt="">
+        <a class="btn btn-warning p-1 mr-1" routerLink="/update_movie/{{movie.id}}">Modifier</a>
+        <a class="btn btn-warning p-1" routerLink="/delete_movie/{{movie.id}}">Supprimer</a>
+      </div>
       <p class="col-8">{{movie.synopsis}}</p>
       <!-- p>{{movie.cover}}</!-->
     </div>

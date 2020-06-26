@@ -32,7 +32,7 @@ uri : /create_movie méthode : get
 route : appel au component createMovieComponent avec un flag isSubmit = false :
   affiche le formulaire vide
 méthode : post, flag isSubmit = true :
-  stocke le contenu des inputs dans un tableau d'objets (data) 
+  stocke le contenu des inputs dans un objet d'objets (data) 
 appel à la méthode movieService.create_movie :
   requete : post INSERT movies VALUES(data)
 Réponse : 
@@ -44,12 +44,18 @@ UPDATE
 
 uri : update_movie/:id
 route : appel au component updateMovieComponent
+  affiche le formulaire vide
+méthode : post, flag isSubmit = true :
+  stocke le contenu des inputs dans un objet d'objets (data)
 appel à la méthode movieService.update_movie avec l'id en paramètre :
-  requête : put UPDATE SET movies WHERE id = id passée en paramètre de l'uri
+  requête : put UPDATE movies SET (colonnes = dataColonnes) WHERE id = id passée en paramètre de l'uri
 Réponse :
   statut(201) comme flag pour afficher un résultat à l'utilisateur
   avec un bouton / lien pour rentourner à tous les films
 
+UPDATE table
+SET nom_colonne_1 = 'nouvelle valeur'
+WHERE condition
 
 DELETE
 

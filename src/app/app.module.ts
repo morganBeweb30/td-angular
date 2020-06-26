@@ -8,13 +8,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { OneMovieComponent } from './movies/one-movie/one-movie.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import {FormsModule} from '@angular/forms';
+import { UpdateMovieComponent } from './movies/update-movie/update-movie.component';
+import { DeleteMovieComponent } from './movies/delete-movie/delete-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     OneMovieComponent,
-    CreateMovieComponent
+    CreateMovieComponent,
+    UpdateMovieComponent,
+    DeleteMovieComponent
   ],
   imports: [
     BrowserModule,

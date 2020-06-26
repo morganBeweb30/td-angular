@@ -30,6 +30,13 @@ export class MovieService {
     return this.http.post<Movie>(`${this.uri}/create_movie`, data);
   }
 
+  update_movie(id: number, data: Movie) {
+    return this.http.put<Movie>(`${this.uri}/update_movie/${id}`, data);
+  }
+
+  delete_movie(id: number) {
+    return this.http.delete<Movie>(`${this.uri}/delete_movie/${id}`);
+  }
 
 
 

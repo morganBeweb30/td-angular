@@ -15,7 +15,7 @@ import {Movie} from '../movie.model';
 })
 export class CreateMovieComponent implements OnInit {
 
-  //  MovieModel imported to store data before send it to the db
+  //  MovieModel imported to get the model af the properties
   movie: Movie = {
     title: '',
     synopsis: '',
@@ -25,6 +25,7 @@ export class CreateMovieComponent implements OnInit {
 
   pageTitle : 'Ajouter un film';
   
+  //  Indicate the files needed
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute, private router: Router
@@ -33,14 +34,14 @@ export class CreateMovieComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//  create_movie
-  //  stocker les données du movie dans le model
+  //  store the movie's data into the 'data' variable, from the 'movie' variable
   saveMovie() {
     const data = {
       title: this.movie.title,
       synopsis: this.movie.synopsis,
       cover: this.movie.cover
     }
+
 
     this.movieService.create_movie(data).subscribe(() => {
       this.isSubmit = true;
