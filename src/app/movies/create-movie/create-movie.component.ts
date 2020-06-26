@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 //  import the service and the model
 import {MovieService} from '../movie.service';
 import {Movie} from '../movie.model';
@@ -13,10 +15,6 @@ import {Movie} from '../movie.model';
 })
 export class CreateMovieComponent implements OnInit {
 
-  constructor(
-    private movieService: MovieService
-  ) { }
-
   //  MovieModel imported to store data before send it to the db
   movie: Movie = {
     title: '',
@@ -26,6 +24,11 @@ export class CreateMovieComponent implements OnInit {
   isSubmit = false;
 
   pageTitle : 'Ajouter un film';
+  
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute, private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -41,12 +44,12 @@ export class CreateMovieComponent implements OnInit {
 
     this.movieService.create_movie(data).subscribe(() => {
       this.isSubmit = true;
+      console.log(data);
     }, (err) => {
       console.log(err);
     });
   }
 
-  
   //  Afficher un nouveau form vide, si on clique sur le bouton '+'
   newMovie() {
     this.isSubmit = false;
@@ -56,5 +59,6 @@ export class CreateMovieComponent implements OnInit {
       cover: ''
     }
   }
+
 
 }

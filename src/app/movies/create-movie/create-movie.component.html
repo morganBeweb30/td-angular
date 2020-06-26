@@ -1,7 +1,38 @@
 
 <p>create-movie works!</p>
 
+<h2>{{pageTitle}}</h2>
 
+<div class="submit-form">
+    <div *ngIf="!isSubmit">
+
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" class="form-control" id="title" required name="title" [(ngModel)]="movie.title">
+      </div>
+      
+      <div class="form-group">
+        <label for="synopsis">Synopsis</label>
+        <textarea class="form-control" id="synopsis" required name="synopsis" [(ngModel)]="movie.synopsis"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="cover">Affiche</label>
+        <input type="text" class="form-control" id="cover" required name="cover" [(ngModel)]="movie.cover">
+      </div>
+      
+      <button (click)="saveMovie()" class="btn btn-warning">Enregistrer</button>
+    </div>
+    
+    <div *ngIf="isSubmit">
+      
+      <h4>Le film a été ajouté</h4>
+
+
+      <button class="btn btn-success" (click)="newMovie()">Ajouter un autre film</button>
+    </div>
+    
+  </div>
 
 
 
